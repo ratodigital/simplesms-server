@@ -1,4 +1,4 @@
 SimpleSMS Server
 ================
 
-SimpleSMS Server on Google App Angine written on Groovy/Gaelyk
+SimpleSMS Server on Google App Angine written in Groovy/Gaelyk
