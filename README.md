@@ -1,4 +1,4 @@
-simplesms-server
+SimpleSMS Server
 ================
 
-SimpleSMS Server on Google App Angine Groovy/Gaelyk
+SimpleSMS Server on Google App Angine written on Groovy/Gaelyk
