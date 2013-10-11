@@ -1,7 +1,13 @@
 import com.google.appengine.api.datastore.*
 
+if (session.user == null) {
+	redirect "/"
+} 
+
+
 devices = datastore.execute {
-	select all from "gcm_device"
+	select regId, name, from "gcm_device"
+	where email = session.user.email
 }
 
 devices.each { d->

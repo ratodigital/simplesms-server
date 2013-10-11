@@ -11,7 +11,10 @@ post "/upload", forward: "/upload.groovy"
 get "/success", forward: "/WEB-INF/pages/success.gtpl"
 get "/failure", forward: "/WEB-INF/pages/failure.gtpl"
 
+post "/login", forward: "/login.groovy"
+
 // GOOGLE CLOUD MESSAGE (GCM)
+get "/gcm/register", forward: "/gcm/register.groovy"
 post "/gcm/register", forward: "/gcm/register.groovy"
 get "/gcm/list", forward: "/gcm/list.groovy"
 get "/gcm/unregister", forward: "/gcm/unregister.groovy"

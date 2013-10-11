@@ -4,7 +4,7 @@ import groovy.json.*
 
 public class GoogleGCM {
   private static final def GCM_URL = 'https://android.googleapis.com/gcm/send'
-  private static final def API_KEY = 'AIzaSyA_Xsie4tmgMzkMQCmvxTbitpcqn47moOE'
+  private static final def API_KEY = 'AIzaSyAQqPsrqBJqwaZJzwgBnjJh5nYi6IMkdvs'
 
   def send(regId, msgCode, msgText) {
     def queryString = "{\"registration_ids\":[\"${regId}\"],\"data\":{\"msg\":\"${msgText}\"}}"
