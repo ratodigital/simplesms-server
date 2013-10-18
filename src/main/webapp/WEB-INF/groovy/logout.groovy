@@ -1,0 +1,2 @@
+memcache.delete 'userEmail'
+redirect "/"

@@ -1,17 +1,23 @@
 import com.google.appengine.api.datastore.*
 
-if (session.user == null) {
+
+if (!memcache["userEmail"]) {
 	redirect "/"
-} 
+} else {
 
+  request.devices = datastore.execute {
+	  select regId:String, name:String
+	  from "gcm_device"
+	  where email == memcache["userEmail"]
+  }
 
-devices = datastore.execute {
-	select regId, name, from "gcm_device"
-	where email = session.user.email
+  forward "/WEB-INF/pages/list.gtpl"
+/*
+  devices.each { d->
+    println "$d.name -> $d.regId <a href=\"/gcm/send?regId=$d.regId\">send 'a new message'</a>"
+  }
+
+  println "<br>${devices.size()} dispositivo(s) registrados no total."
+*/
+  
 }
-
-devices.each { d->
-  println "$d.name -> $d.regId <a href=\"/gcm/send?regId=$d.regId\">send 'a new message'</a>"
-}
-
-println "<br>${devices.size()} dispositivo(s) registrados no total."

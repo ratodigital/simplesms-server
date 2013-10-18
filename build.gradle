@@ -39,6 +39,10 @@ gaelykPrecompileTemplate.runtimeClasspath += project.configurations.precompile
 dependencies {
     def gaeVersion = '1.8.0'
     def groovyVersion = '2.1.3'
+  
+    def gebVersion = "0.9.0"
+    def seleniumVersion = "2.25.0"
+    
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}" 
 //    precompile "org.codehaus.groovy:groovy-ant:${groovyVersion}"     
 //    precompile "org.ow2.asm:asm:4.0" 
@@ -48,18 +52,8 @@ dependencies {
     compile "com.google.appengine:appengine-api-1.0-sdk:$gaeVersion",
             "com.google.appengine:appengine-api-labs:$gaeVersion"
     compile 'org.gaelyk:gaelyk:2.0'
-		compile files("lib/itextg-5.4.3.jar")
-/*
-   compile files("$buildDir/classes") {
-        builtBy 'compile'
-    }
-		compile files ("src/main/webapp/WEB-INF/lib/itextg-5.4.3.jar") {
-			builtBy('compile')
-		}
-*/
-//		compile "com.itextpdf:itextpdf:5.4.3"    
+    compile "org.codehaus.groovy.modules.http-builder:http-builder:0.6"
     
-
     /** 
      * To add binary plugin just declare it as a dependency. For example,
      * uncomment following to add GPars support to your Gaelyk project.
@@ -73,13 +67,17 @@ dependencies {
      * @see https://github.com/gaelyk/gaelyk-console
      */
     // compile 'org.gaelyk:gaelyk-console:2.0'
-    
+
     testCompile 'org.gaelyk:gaelyk-spock:0.4'
     testCompile "com.google.appengine:appengine-api-stubs:$gaeVersion",
                 "com.google.appengine:appengine-testing:$gaeVersion"
+    testCompile "org.codehaus.groovy.modules.http-builder:http-builder:0.6"
                 
-    functionalTestCompile 'org.codehaus.geb:geb-spock:0.7.0',
-                          'org.seleniumhq.selenium:selenium-firefox-driver:2.22.0'
+
+    functionalTestCompile "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion",
+                          "org.gebish:geb-spock:$gebVersion",
+                          'org.spockframework:spock-core:0.7-groovy-2.0'
+
     gaeSdk "com.google.appengine:appengine-java-sdk:$gaeVersion"
 }
 

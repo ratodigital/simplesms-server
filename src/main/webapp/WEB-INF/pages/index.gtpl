@@ -1,45 +1,16 @@
 <% include '/WEB-INF/includes/header.gtpl'%>
 
+<% include '/WEB-INF/includes/navbar.gtpl' %>
+
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
+    
 	  <div class="container">
 	    <h1>SimpleSMS <small>Beta</small></h1>
 	    <p>Utilize o seu Android como gateway para enviar mensagens SMS pela internet, aproveitando o plano da sua operadora.</p>
 	    
-      <a data-toggle="modal" href="#myModal" class="btn btn-success btn-lg">Login</a>
+      <a data-toggle="modal" href="#myModal" class="btn btn-success btn-lg">Login</a> 
 
-      <div class="modal" id="myModal">
-	      <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Login</h4>
-              </div>
-              <div class="modal-body">
-                <form class="form-horizontal" role="form">
-                  <fieldset>
-                    <div class="form-group">
-                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                      <div class="col-lg-10">
-                        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Email">
-                      </div>  
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPassword" class="col-lg-2 control-label">Senha</label>
-                      <div class="col-lg-10">
-                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Senha">
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <a href="#" data-dismiss="modal" class="btn">Fechar</a>
-                <a href="/login" class="btn btn-primary">Login</a>
-              </div>
-            </div>
-          </div>
-      </div>
     </div>
   </div>
 
