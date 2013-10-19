@@ -13,29 +13,25 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/modern-business.js"></script>
 		<script>
-    (jQuery)(document).ready(function() {
-
-        (jQuery)('#btnLogin').click(function() {
-            (jQuery).ajax({
-                type: "POST",
-                dataType: "json",
-                url: '/login',
-                data: {
-                    email: (jQuery)("#email").val(),
-                    password: (jQuery)("#password").val()
-                },
-                success: function(json)
-                {
-                    if (json.status === 'ERROR') {
-                      alert("Usuário ou senha inválidos");
-                    } else {
-                      location.reload(true)
-                    }
+		function submitLogin() {
+        (jQuery).ajax({
+            type: "POST",
+            dataType: "json",
+            url: '/login',
+            data: {
+                email: (jQuery)("#email").val(),
+                password: (jQuery)("#password").val()
+            },
+            success: function(json)
+            {
+                if (json.status === 'ERROR') {
+                  alert("Usuário ou senha inválidos");
+                } else {
+                  location.reload(true)
                 }
-            });
-
+            }
         });
-    });		
+		}		
 		</script>
   </body>
 </html>

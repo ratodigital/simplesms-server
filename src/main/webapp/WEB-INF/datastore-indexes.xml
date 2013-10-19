@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes autoGenerate="true">
+    <datastore-index kind="device">
+        <property name="email" direction="asc" />
+        <property name="regId" direction="asc" />
+        <property name="name" direction="asc" />
+    </datastore-index>
+    <datastore-index kind="user">
+        <property name="email" direction="asc" />
+    </datastore-index>
+    <datastore-index kind="phone">
+        <property name="email" direction="asc" />
+        <property name="name" direction="asc" />
+    </datastore-index>
+</datastore-indexes>

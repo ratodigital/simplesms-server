@@ -8,6 +8,8 @@
 		<title><%if (!params.title) {%>SimpleSMS<%} else {%>SimpleSMS - $params.title<%}%></title>
     <link rel="shortcut icon" href="/favicon.ico">
 
+    <script src="/js/jquery-1.7.2.min.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 		

@@ -1,42 +1,26 @@
-import com.google.appengine.api.datastore.*
 import groovy.json.*
-import util.*
+import model.*
 
-import com.google.appengine.api.datastore.*
-
+def user = null
 def status = ""
 def code = ""
 def message = ""
-
+import com.google.appengine.api.datastore.*
 if (!params.regId || !params.email || !params.password || !params.name) {
   status = "ERROR"
   code = "99"
   message = "INVALID PARAMETERS"  
 } else {
-  def usr = datastore.execute {
-	  select single password
-	  from 'user'
-	  where 'email' == params.email
-  }
-  if (usr !=null && usr.password != params.password) {
+	def userModel = new Users()
+  user = userModel.getPassword(params.email)
+  if (user != null && user.password != params.password) {
       status = "ERROR"
       code = "01"
       message = "INVALID PASSWORD"
   } else {
-    if (usr == null) {
-      def u = new Entity("user")
-      u.email = params.email
-      u.password = params.password
-      u.dateCreated = (new Clock()).getDateTime()
-      u.save()	
-    }
-    
-    device = datastore.execute {
-	    select single email
-	    from 'gcm_device'
-	    where regId == params.regId
-    }
-      
+		def deviceModel = new Devices()
+    device = deviceModel.getEmailByDeviceId(params.regId)
+
     if (device != null) {
       if (device.email != params.email) {
         status = "ERROR"
@@ -48,13 +32,8 @@ if (!params.regId || !params.email || !params.password || !params.name) {
         message = "DEVICE ALREADY REGISTERED FOR THIS USER"
       }
     } else {
-      device = datastore.execute {
-	      select count
-	      from 'gcm_device'
-	      where name == params.name
-	      and email == params.email
-      }
-      if (device > 0) {
+			println memcache['userEmail']
+      if (deviceModel.deviceNameExists(params.email, params.name)) {
         status = "ERROR"
         code = "04"
         message = "DEVICE NAME ALREADY EXISTS"
@@ -62,12 +41,10 @@ if (!params.regId || !params.email || !params.password || !params.name) {
     }
     
     if (status != "ERROR") {
-      def e = new Entity("gcm_device")
-      e.email = params.email
-      e.regId = params.regId
-      e.name = params.name      
-      e.dateCreated = (new Clock()).getDateTime()
-      e.save()	
+		  if (user == null) {
+				userModel.add(params.email, params.password)
+		  }
+			deviceModel.add(params.regId, params.name)
       code = "00"
       message = "DEVICE REGISTERED OK"
     }
