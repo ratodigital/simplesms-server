@@ -13,8 +13,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/dispositivos">Dispositivos</a></li>
-				<li><a href="/telefones">Telefones</a></li>
 				<!--
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.php">Contact</a></li>
@@ -65,6 +63,9 @@
           </div>
         </li>
 				<%} else {%>
+        <li><a href="/sms">Enviar SMS</a></li>				
+        <li><a href="/dispositivos">Dispositivos</a></li>
+				<li><a href="/telefones">Telefones</a></li>
 				<li><a href="/logout">Logout</a></li>
 				<%}%>
     	</ul>

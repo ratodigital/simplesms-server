@@ -33,11 +33,11 @@ public class Devices {
 		count > 0
 	}
 
-	def add(regId, name) {
+	def add(regId, name, email) {
     def e = new Entity("device")
     e.regId = regId
     e.name = name      
-		e.email = memcache['userEmail']
+		e.email = email
     e.dateCreated = (new Clock()).getDateTime()
     e.save()	
 	}

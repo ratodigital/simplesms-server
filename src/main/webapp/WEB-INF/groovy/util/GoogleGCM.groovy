@@ -2,6 +2,32 @@ package util
 
 import groovy.json.*
 
+/*
+codes       text  
+NEW_MESSAGE <QTD DE MENSAGENS A SEREM ENVIADAS>  /messages/@regId
+
+{
+[
+  message: "aqui vai o texto da mensagem"
+  devices: [
+    "557181069246","55716665544","12341234"
+  ]
+]
+[
+  message: "aqui vai o texto da mensagem"
+  devices: [
+    "557181069246","55716665544","12341234"
+  ]
+]
+[
+  message: "aqui vai o texto da mensagem"
+  devices: [
+    "557181069246","55716665544","12341234"
+  ]
+]
+}
+*/
+
 public class GoogleGCM {
   private static final def GCM_URL = 'https://android.googleapis.com/gcm/send'
   private static final def API_KEY = 'AIzaSyAQqPsrqBJqwaZJzwgBnjJh5nYi6IMkdvs'
@@ -15,8 +41,8 @@ public class GoogleGCM {
     jsonQueryString {
       registration_ids regIds
       data(
-        msgCode: msgCode,
-        msgText: msgText,        
+        code: msgCode,
+        text: msgText,        
       )
     }
     

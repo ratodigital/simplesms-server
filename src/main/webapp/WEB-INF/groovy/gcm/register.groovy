@@ -5,7 +5,7 @@ def user = null
 def status = ""
 def code = ""
 def message = ""
-import com.google.appengine.api.datastore.*
+
 if (!params.regId || !params.email || !params.password || !params.name) {
   status = "ERROR"
   code = "99"
@@ -32,7 +32,6 @@ if (!params.regId || !params.email || !params.password || !params.name) {
         message = "DEVICE ALREADY REGISTERED FOR THIS USER"
       }
     } else {
-			println memcache['userEmail']
       if (deviceModel.deviceNameExists(params.email, params.name)) {
         status = "ERROR"
         code = "04"
@@ -44,7 +43,7 @@ if (!params.regId || !params.email || !params.password || !params.name) {
 		  if (user == null) {
 				userModel.add(params.email, params.password)
 		  }
-			deviceModel.add(params.regId, params.name)
+			deviceModel.add(params.regId, params.name, params.email)
       code = "00"
       message = "DEVICE REGISTERED OK"
     }
