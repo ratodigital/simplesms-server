@@ -32,26 +32,3 @@ if (params.email && params.password) {
 
 def json = new JsonBuilder([status:status, code: code, message: message])
 println JsonOutput.prettyPrint(json.toString())
-  
-/*
-forward "/WEB-INF/pages/list.gtpl"
-
-import com.google.appengine.api.datastore.*
-
-if (session.getAttribute("user") == null) {
-	redirect "/"
-} else {
-  user = session.getAttribute("user")
-
-  devices = datastore.execute {
-	  select regId:String, name:String
-	  from "gcm_device"
-	  where email == user.email
-  }
-
-  devices.each { d->
-    println "$d.name -> $d.regId <a href=\"/gcm/send?regId=$d.regId\">send 'a new message'</a>"
-  }
-
-  println "<br>${devices.size()} dispositivo(s) registrados no total."
-}*/

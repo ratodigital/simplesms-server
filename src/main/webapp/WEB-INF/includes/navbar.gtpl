@@ -64,8 +64,10 @@
         </li>
 				<%} else {%>
         <li><a href="/sms">Enviar SMS</a></li>				
+        <li><a href="/mensagens">Mensagens</a></li>        
         <li><a href="/dispositivos">Dispositivos</a></li>
 				<li><a href="/telefones">Telefones</a></li>
+				<li><a href="/grupos">Grupos</a></li>				
 				<li><a href="/logout">Logout</a></li>
 				<%}%>
     	</ul>

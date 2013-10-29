@@ -19,6 +19,8 @@
     <!-- Font Awesome CSS -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     		    
+    <link href="/css/chosen.min.css" rel="stylesheet" type="text/css">
+        		    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="/js/html5shiv.js"></script>

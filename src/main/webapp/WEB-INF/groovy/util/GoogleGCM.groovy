@@ -4,7 +4,7 @@ import groovy.json.*
 
 /*
 codes       text  
-NEW_MESSAGE <QTD DE MENSAGENS A SEREM ENVIADAS>  /messages/@regId
+NEW_MESSAGE $messageId
 
 {
 [

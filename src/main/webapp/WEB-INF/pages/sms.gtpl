@@ -10,7 +10,7 @@
         <div class="col-lg-12">
           <h1 class="page-header">Enviar SMS <small>Informe a mensagem e selecione o dispositivo para enviar SMS</small></h1>
           
-          <form class="form-horizontal" role="form" method="post" action="/sms/send">
+          <form class="form-horizontal" role="form" method="post" action="/send/sms">
        
             <div class="form-group">
               <label class="sr-only" for="message">Mensagem</label>

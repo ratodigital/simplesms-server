@@ -1,7 +1,10 @@
 import model.*
 
-def model = new Phones()
-model.delete(params.id)
+if (!memcache["userEmail"]) {
+	redirect "/"
+} else {
+  def model = new Phones()
+  model.delete(params.id)
 
-forward '/tel/listTel.groovy'
-
+  forward '/tel/listTel.groovy'
+}

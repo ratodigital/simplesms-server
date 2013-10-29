@@ -1,8 +1,10 @@
 import model.*
 
-def model = new Phones()
-request.tels = model.list()
+if (!memcache["userEmail"]) {
+	redirect "/"
+} else {
+  def model = new Phones()
+  request.tels = model.list()
 
-//println tels
-forward '/WEB-INF/pages/tels.gtpl'
-
+  forward '/WEB-INF/pages/tels.gtpl'
+}
