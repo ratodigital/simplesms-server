@@ -4,5 +4,5 @@ if (!memcache["userEmail"]) {
 } else {
 	def model = new Devices()
 	request.devices = model.list()
-  forward "/WEB-INF/pages/list.gtpl"
+  forward "/WEB-INF/pages/listDevices.gtpl"
 }

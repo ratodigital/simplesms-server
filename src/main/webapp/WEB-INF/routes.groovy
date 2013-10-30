@@ -25,14 +25,16 @@ post "/group/insert",         forward:  "/group/insertGroup.groovy"
 get  "/group/delete/@id",     forward:  "/group/deleteGroup.groovy?id=@id"
 post "/group/update",         forward:  "/group/updateGroup.groovy"
 
+get "/chosen", forward: "/WEB-INF/pages/chosen.gtpl"
+
 // PHONES
-get "/telefones", forward: "/tel/listTel.groovy"
-get  "/tel/list",           forward:  "/tel/listTel.groovy"
-get  "/tel/add",            forward:  "/WEB-INF/pages/tel.gtpl"
-post "/tel/insert",         forward:  "/tel/insertTel.groovy"
-get  "/tel/edit/@id",     forward:  "/tel/editTel.groovy?id=@id"
-get  "/tel/delete/@id",     forward:  "/tel/deleteTel.groovy?id=@id"
-post "/tel/update",         forward:  "/tel/updateTel.groovy"
+get "/contatos", forward: "/contact/listContact.groovy"
+get  "/contact/list",           forward:  "/contact/listContact.groovy"
+get  "/contact/add",            forward:  "/contact/editContact.groovy"
+post "/contact/insert",         forward:  "/contact/insertContact.groovy"
+get  "/contact/edit/@id",       forward:  "/contact/editContact.groovy?id=@id"
+get  "/contact/delete/@id",     forward:  "/contact/deleteContact.groovy?id=@id"
+post "/contact/update",         forward:  "/contact/updateContact.groovy"
 
 // GOOGLE CLOUD MESSAGE (GCM)
 get "/dispositivos", forward: "/gcm/listDevices.groovy"

@@ -12,6 +12,8 @@
 
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/modern-business.js"></script>
+    
+    <!-- Choosen plugin -->
     <script src="/js/chosen.jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var config = {
@@ -24,11 +26,9 @@
       for (var selector in config) {
         (jQuery)(selector).chosen(config[selector]);
       }
-    </script>
+    </script>  
 
-		<script>
-
-        		
+    <script type="text/javascript">
 		function submitLogin() {
         (jQuery).ajax({
             type: "POST",

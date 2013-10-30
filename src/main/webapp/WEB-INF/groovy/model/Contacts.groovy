@@ -7,11 +7,11 @@ import groovyx.gaelyk.GaelykBindings
 import util.*
 
 @GaelykBindings
-public class Phones {
+public class Contacts {
 
   def get(id) {
     def longId = Long.parseLong(id)
-    Key key = KeyFactory.createKey("phone", longId)
+    Key key = KeyFactory.createKey("contact", longId)
     def goal = datastore.get(key)
   }
   
@@ -19,30 +19,30 @@ public class Phones {
 		def userEmail = memcache['userEmail']
 		datastore.execute {
 	  	select all
-	 	 	from phone
+	 	 	from contact
 			where email == userEmail
 			sort asc by name
   	}
 	}
 
 	def delete(id) {
-		Key key = KeyFactory.createKey("phone", Long.parseLong(id))
+		Key key = KeyFactory.createKey("contact", Long.parseLong(id))
 		key.delete()
 	}
 
-  def update(id, number, name, groups) {
+  def update(id, name, phone, groups) {
     def e = get(id)  
-    e.number = number
     e.name = name
+    e.phone = phone    
     e.groups = prepareGroups(groups)
     e.save()	
   }
 
-	def add(number, name, groups) {
-    def e = new Entity("phone")
+	def add(name, phone, groups) {
+    def e = new Entity("contact")
 		e.email = memcache['userEmail']
-    e.number = number
     e.name = name
+    e.phone = phone
     e.groups = prepareGroups(groups)
     e.dateCreated = (new Clock()).getDateTime()
     e.save()	
