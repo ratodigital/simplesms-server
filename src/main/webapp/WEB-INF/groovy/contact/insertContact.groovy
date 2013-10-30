@@ -6,5 +6,5 @@ if (!memcache["userEmail"]) {
   def model = new Contacts()
   model.add(params.name, params.phone, params.groups)
 
-  forward '/contact/listContact.groovy'
+  redirect '/contact/listContact.groovy'
 }

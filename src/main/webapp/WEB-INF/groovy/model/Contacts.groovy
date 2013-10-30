@@ -25,6 +25,27 @@ public class Contacts {
   	}
 	}
 
+	def listByGroup(group) {
+		def userEmail = memcache['userEmail']
+		datastore.execute {
+	  	select all
+	 	 	from contact
+			where email == userEmail
+			and groups == group
+			sort asc by name
+  	}
+	}
+
+  def countByGroup(group) {
+		def userEmail = memcache['userEmail']
+		datastore.execute {
+	  	select count
+	 	 	from contact
+			where email == userEmail
+			and groups == group
+  	}
+  } 
+  
 	def delete(id) {
 		Key key = KeyFactory.createKey("contact", Long.parseLong(id))
 		key.delete()

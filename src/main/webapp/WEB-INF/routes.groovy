@@ -23,6 +23,7 @@ get  "/group/list",           forward:  "/group/listGroup.groovy"
 get  "/group/add",            forward:  "/WEB-INF/pages/group.gtpl"
 post "/group/insert",         forward:  "/group/insertGroup.groovy"
 get  "/group/delete/@id",     forward:  "/group/deleteGroup.groovy?id=@id"
+get  "/group/edit/@id",       forward:  "/group/editGroup.groovy?id=@id"
 post "/group/update",         forward:  "/group/updateGroup.groovy"
 
 get "/chosen", forward: "/WEB-INF/pages/chosen.gtpl"

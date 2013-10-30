@@ -17,7 +17,7 @@
         <div class="form-group">
           <label for="name" class="col-lg-2 control-label">Nome</label>
           <div class="col-lg-6">
-            <input type="text" class="form-control" id="name" name="name" value="${group?.name ? group.name : ''}" size="30">
+            <input type="text" class="form-control" id="name" name="name" value="${group?.name ? group.name : ''}" size="30" <%if (existingKey){%>readonly<%}%>>
           </div>      
         </div>
         <div class="form-group">

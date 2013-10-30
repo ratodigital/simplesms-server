@@ -8,7 +8,13 @@ import util.*
 
 @GaelykBindings
 public class Groups {
-
+  
+  def get(id) {
+    def longId = Long.parseLong(id)
+    Key key = KeyFactory.createKey("group", longId)
+    def goal = datastore.get(key)
+  }
+  
 	def list() {
 		def userEmail = memcache['userEmail']
 		datastore.execute {
