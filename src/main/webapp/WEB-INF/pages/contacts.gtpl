@@ -21,20 +21,21 @@
   </div>    
 
   <div class="row">
-    <div class="col-md-2">
-      <div class="list-group">
-
-        <%
-        request.groups.each { group  ->
-        %>        
-        <a class="list-group-item ${request.group == group.name ? 'active':''}" href="/contatos?group=${group.name}" <%if (request.group == group.name){%>active<%}%>><span class="badge pull-right">${group.value}</span>${group.name}</a>
-        <%  
-        }
-        %>
+    <div class="col-xs-6 col-md-4">
+      <div class="well">
+        <div class="list-group">
+          <%
+          request.groups.each { group  ->
+          %>        
+          <a class="list-group-item ${request.group == group.name ? 'active':''}" href="/contatos?group=${group.name}" <%if (request.group == group.name){%>active<%}%>><span class="badge pull-right">${group.value}</span>${group.name}</a>
+          <%  
+          }
+          %>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-10">
+    <div class="col-xs-12 col-sm-6 col-md-8">
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

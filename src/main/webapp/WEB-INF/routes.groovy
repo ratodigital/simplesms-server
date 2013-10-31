@@ -27,6 +27,7 @@ get  "/group/edit/@id",       forward:  "/group/editGroup.groovy?id=@id"
 post "/group/update",         forward:  "/group/updateGroup.groovy"
 
 get "/chosen", forward: "/WEB-INF/pages/chosen.gtpl"
+get "/dash", forward: "/WEB-INF/pages/dash.gtpl"
 
 // PHONES
 get "/contatos", forward: "/contact/listContact.groovy"
