@@ -16,14 +16,6 @@
         <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
 
-
-
-
-
-
-
-
-
         <!-- CSS code from Bootply.com editor -->
         
         <style type="text/css">
@@ -130,15 +122,15 @@ footer {
           </a>
         
             <ul class="list-unstyled collapse" id="menu2">
-                <li><a href="#">Information &amp; Stats</a>
-                </li>
-                <li><a href="#">Views</a>
-                </li>
-                <li><a href="#">Requests</a>
-                </li>
+        <li><a href="#">Information &amp; Stats</a>
+        </li>
+        <li><a href="#">Views</a>
+        </li>
+        <li><a href="#">Requests</a>
+        </li>
                 <li><a href="#">Timetable</a>
                 </li>
-                <li><a href="#">Alerts</a>
+            <li><a href="#">Alerts</a>
                 </li>
             </ul>
         </li>
@@ -266,7 +258,7 @@ footer {
               <div class="container">
                 <ul class="nav nav-tabs" id="myTab">
                   <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-                  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+              <li><a href="#messages" data-toggle="tab">Messages</a></li>
                   <li><a href="#settings" data-toggle="tab">Settings</a></li>
                 </ul>
                 

@@ -38,10 +38,10 @@
       </div>     
       <div class="form-actions">
         <div class="col-lg-offset-2 col-lg-10">
-          <!-- Indicates caution should be taken with this action -->
-          <button type="submit" class="btn btn-primary btn-lg">${action}</button>
-          <!-- Indicates a dangerous or potentially negative action -->
-          <button type="button" class="btn btn-danger" onclick="javascript:document.location.href = '/contatos';">Cancelar</button>
+          <p>
+            <a href="/contatos">Cancelar</a>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> ${action}</button>
+          </p>
         </div>
       </div>             
       <% if(existingKey) { %>
